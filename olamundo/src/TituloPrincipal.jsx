@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function TituloPrincipal(props) {
   const [ titulo, setTitulo ] = useState(props.titulo ?? "Olá, mundo!");
+
+  useEffect(() => console.log("O título está sendo observado."), [titulo]);
 
   function onClickHandler(event) {
     alert("Clicou!");
